@@ -273,6 +273,6 @@ puanStr= str(oriPuan)
 
     query = dict(request.form)['query']
     res = query + " " + "naber brooooo güncelledin mi ? "
-    return jsonify({"response" : puanStr})
+    return jsonify({"response" : res})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
