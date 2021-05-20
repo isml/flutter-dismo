@@ -248,8 +248,10 @@ def response():
         oriPuan+=6;
     elif(oranKontrolSayi==1 and 50<=oriPuan<=80):
         oriPuan+=3;
+    
+    resPuan = str(oriPuan)
     query = dict(request.form)['query']
     res = query + " " + "naber brooooo güncelledin mi ? "
-    return jsonify({"response" : res})
+    return jsonify({"response" : resPuan})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
