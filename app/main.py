@@ -15,13 +15,17 @@ import requests
 app = Flask(__name__);
 @app.route("/bot", methods=["POST"])
 def response():
-    url = 'https://firebasestorage.googleapis.com/v0/b/dismo-45c00.appspot.com/o/soner.stl?alt=media&token=e97408ce-0253-46c3-b755-72024bb4a1d2'
-    r = requests.get(url, allow_redirects=True)
+    url1 = 'https://firebasestorage.googleapis.com/v0/b/dismo-45c00.appspot.com/o/mentese1.stl?alt=media&token=af25370d-1737-45e6-8b52-7fa7a642405b'
+    r1 = requests.get(url1, allow_redirects=True)
+    
+    url2 = 'https://firebasestorage.googleapis.com/v0/b/dismo-45c00.appspot.com/o/mentese2.stl?alt=media&token=274e1189-f763-4b98-9652-ccab9e72effc'
+    r2 = requests.get(url2, allow_redirects=True)
 
-    open('model1.stl', 'wb').write(r.content)
+    open('model1.stl', 'wb').write(r1.content)
+    open('model2.stl', 'wb').write(r2.content)
 
     c1 = mesh.Mesh.from_file('model1.stl')
-    c2 = mesh.Mesh.from_file('model1.stl')
+    c2 = mesh.Mesh.from_file('model2.stl')
     volume1, cog1, inertia = c1.get_mass_properties()
     volume2, cog2, inertia = c2.get_mass_properties()
     ox = cog1[0]-cog2[0]
