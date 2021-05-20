@@ -2,3 +2,4 @@ flask
 gunicorn
 numpy-stl
 numpy
+requests
