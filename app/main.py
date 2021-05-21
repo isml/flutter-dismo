@@ -257,7 +257,7 @@ def response():
     
     resPuan = str(oriPuan)
     
-    res = query + " " + "naber brooooo güncelledin mi ? "
+    
     return jsonify({"response" : resPuan})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
