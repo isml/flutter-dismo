@@ -16,7 +16,7 @@ app = Flask(__name__);
 @app.route("/bot", methods=["POST"])
 def response():
     query = dict(request.form)['query']
-    modelUrls = query.split("+")
+    modelUrls = query.split("+linkdivider+")
     url1 = modelUrls[0]
     r1 = requests.get(url1, allow_redirects=True)
     
