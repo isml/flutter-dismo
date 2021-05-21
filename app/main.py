@@ -15,10 +15,12 @@ import requests
 app = Flask(__name__);
 @app.route("/bot", methods=["POST"])
 def response():
-    url1 = 'https://firebasestorage.googleapis.com/v0/b/dismo-45c00.appspot.com/o/mentese1.stl?alt=media&token=af25370d-1737-45e6-8b52-7fa7a642405b'
+    query = dict(request.form)['query']
+    modelUrls = query.split("+")
+    url1 = modelUrls[0]
     r1 = requests.get(url1, allow_redirects=True)
     
-    url2 = 'https://firebasestorage.googleapis.com/v0/b/dismo-45c00.appspot.com/o/mentese2.stl?alt=media&token=274e1189-f763-4b98-9652-ccab9e72effc'
+    url2 = modelUrls[1]
     r2 = requests.get(url2, allow_redirects=True)
 
     open('model1.stl', 'wb').write(r1.content)
@@ -254,7 +256,7 @@ def response():
         oriPuan+=3;
     
     resPuan = str(oriPuan)
-    query = dict(request.form)['query']
+    
     res = query + " " + "naber brooooo güncelledin mi ? "
     return jsonify({"response" : resPuan})
 if __name__=="__main__":
