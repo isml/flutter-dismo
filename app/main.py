@@ -262,6 +262,6 @@ def response():
     else:
         response = resPuan
     
-    return jsonify({"response" : response})
+    return jsonify({"response" : str(response)})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
