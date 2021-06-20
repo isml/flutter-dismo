@@ -258,7 +258,7 @@ def response():
     resPuan = str(oriPuan)
    
     if(len(modelUrls)>2:
-       response = respuan+"+"+volume1+"+"+volume2+"+"+faces01+"+"+faces02+"+"+VolumeOran+"+"+facesOran
+       response = resPuan+"+"+str(volume1)+"+"+str(volume2)+"+"+str(faces01)+"+"+str(faces02)+"+"+str(VolumeOran)+"+"+str(facesOran)
     else:
        response = resPuan
     
