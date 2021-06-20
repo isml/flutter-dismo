@@ -256,8 +256,12 @@ def response():
         oriPuan+=3;
     
     resPuan = str(oriPuan)
+   
+    if(len(modelUrls)>2:
+       response = respuan+"+"+volume1+"+"+volume2+"+"+faces01+"+"+faces02+"+"+VolumeOran+"+"+facesOran
+    else:
+       response = resPuan
     
-    
-    return jsonify({"response" : resPuan})
+    return jsonify({"response" : response})
 if __name__=="__main__":
     app.run(host="0.0.0.0",)
